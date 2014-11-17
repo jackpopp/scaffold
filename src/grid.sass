@@ -1,0 +1,54 @@
+*
+	box-sizing: border-box
+
+.clearfix:after 
+	visibility: hidden
+	display: block
+	font-size: 0
+	content: " "
+	clear: both
+	height: 0
+	
+* html .clearfix
+	zoom: 1
+*:first-child+html .clearfix 
+	zoom: 1
+
+.row
+	@if $isResponsive
+		width: 100%
+	@else
+		width: $maxWidth
+
+	max-width: $maxWidth
+	margin: 0 auto
+	.row
+		width: 100%
+	@extend .clearfix
+	&.collapse
+		padding: 0
+	&.collapse-columns
+		.column
+			padding: 0
+
+.column
+	padding-left: $columnPad
+	padding-right: $columnPad
+	float: left
+	width: 100%
+	&.collapse
+		padding: 0
+
+@mixin createColumns
+	@for $i from 1 through $columns
+		@each $name, $breakpoint in $breakpoints 
+			.col-#{$i}-#{$name}
+				@media only screen and (min-width: $breakpoint)
+					width: 100%/ ($columns / $i)
+				@extend .column
+			.push-#{$i}-#{$name}
+				@media only screen and (min-width: $breakpoint)
+					margin-left: 100%/ ($columns / $i)
+			
+
+@include createColumns
