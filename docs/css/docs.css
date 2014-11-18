@@ -1,0 +1,22 @@
+.demo div[class^='col-'], .demo div[class*='col-'] {
+  background: #C4C4C4;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 1.6; }
+  .demo div[class^='col-']:nth-child(odd), .demo div[class*='col-']:nth-child(odd) {
+    background: #e2e2e2; }
+.demo .row {
+  margin-bottom: 10px; }
+
+.language-markup {
+  font-size: 14px; }
+
+pre[class*="language-"] {
+  margin-top: 0 !important; }
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center; }
+
+/*# sourceMappingURL=docs.css.map */
