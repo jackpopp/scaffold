@@ -1,3 +1,6 @@
+body {
+  font-family: "Lato", sans-serif; }
+
 .demo div[class^='col-'], .demo div[class*='col-'] {
   background: #C4C4C4;
   padding-top: 5px;
@@ -12,7 +15,8 @@
   font-size: 14px; }
 
 pre[class*="language-"] {
-  margin-top: 0 !important; }
+  margin-top: 0 !important;
+  font-family: "Lato", sans-serif !important; }
 
 footer {
   padding-top: 20px;
