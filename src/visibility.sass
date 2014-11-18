@@ -21,6 +21,10 @@
 				@media only screen and (max-width: $nextWidth - 1)
 					display: inherit!important
 
+			.hide-for-#{$currentName}
+				@media only screen and (min-width: $nextWidth)
+					display: inherit!important
+
 		// between first and last
 		@if $i > 1 and length($breakpoints) > $i
 			.show-for-#{$currentName}
@@ -36,9 +40,28 @@
 				@media only screen and (min-width: $currentWidth)
 					display: inherit!important
 
+			.hide-for-#{$currentName}
+				display: inherit!important
+				@media only screen and (min-width: $currentWidth) and (max-width: $nextWidth - 1)
+					display: none!important
+
+			.hide-for-#{$currentName}-down
+				@media only screen and (min-width: $nextWidth)
+					display: inherit!important
+
+			.hide-for-#{$currentName}-up
+				display: inherit!important
+				@media only screen and (min-width: $currentWidth)
+					display: none!important
+
 	// last
 	@if $i == length($breakpoints)
 		.show-for-#{$currentName}
 			@media only screen and (min-width: $currentWidth)
 				display: inherit!important
+
+		.hide-for-#{$currentName}
+			display: inherit!important
+			@media only screen and (min-width: $currentWidth)
+				display: none!important
 
