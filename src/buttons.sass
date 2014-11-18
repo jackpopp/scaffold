@@ -1,0 +1,28 @@
+button, .button
+	padding: 10px
+	margin: 0 0 $defaultPad 0
+	min-width: 80px
+	border: 0
+	background-color: $mainColor
+	color: $buttonCopy
+	font-size: 13px
+	font-weight: 400
+	text-align: center
+	display: inline-block
+	border-radius: 3px
+	&:hover
+		background-color: darken($mainColor, 10%)
+		color: $altBodyColor
+	&.warn
+		background-color: $warnColor
+		&:hover
+			background-color: darken($warnColor, 10%)
+	&.success
+		background-color: $successColor
+		&:hover
+			background-color: darken($successColor, 10%)
+	&.bland
+		background-color: $blandColor
+		color: $bodyColor
+		&:hover
+			background-color: darken($blandColor, 10%)

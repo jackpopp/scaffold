@@ -1,0 +1,31 @@
+body
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
+	font-weight: 300
+	-webkit-font-smoothing: antialiased
+	word-break: break-word
+	margin: 0
+	padding: 0
+	color: $bodyColor
+
+h1,h2,h3,h4,h5,h6,p,a
+	color: $bodyColor
+	margin-top: 10px
+p
+	font-size: 16px
+	line-height: 1.6
+	margin-bottom: 16px
+
+a
+	color: $mainColor
+	text-decoration: none
+	&:hover
+		color: darken($mainColor, 20%)
+
+ul
+	margin: 0
+	padding: 0
+	margin-bottom: 16px
+	li
+		padding: 5px 0
+		margin: 0
+		list-style: none
