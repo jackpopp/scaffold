@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="docs/css/griddle.css" rel="stylesheet" type="text/css">
+		<link href="docs/css/docs.css" rel="stylesheet" type="text/css">
+		<link href="docs/css/prism.css" rel="stylesheet" type="text/css">
+		<title>Griddle - CSS framework.</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="docs/js/prism.js"></script>
+		<script>
+			Prism.highlightAll()
+		</script>
+	</head>
+	<body>
+		<nav class="top-nav">
+			<div class="row">
+				<div class="col-8">
+					<h1>Griddle</h1>
+				</div>
+			</div>
+		</nav>
+
+			<div class="row">
+				<div class="col-8">
+					<p>
+						Quickly cook up a new website with Griddle, a small responsive css framework. Griddle is lightweight standing at around 11kb including <a href="">normalize.css.</a>
+					</p>
+					<p>
+						<a href="https://github.com/jackpopp/griddle">Check out the repository on github.</a>
+					</p>
+					<h2>Browser Support</h2>
+					<p>Current list of tested and supported browsers</p>
+					<ul>
+						<li>Chrome 14+</li>
+						<li>Firefox 3.6+</li>
+						<li>Safari 4+</li>
+						<li>Opera 10.6+</li>
+						<li>IE 9+</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-8">
+					<h2>Installation</h2>
+				</div>
+				<div class="col-4 col-4-med">
+					<p>A prebuilt version of Griddle with default settings can be found in the <strong>build</strong> folder, you can create a custom build from the supplied SASS file.</p>
+					<p>To build a custom version of Griddle you can use the original SASS file along with the provided gulpfile to build the css file. You can adjust the amount of columns, breakpoints, gutters and more.</p>
+				</div>
+				<div class="col-4 col-4-med">
+					<div class="panel">
+						<h4>Custom Build</h4>
+						<p>You can create a custom build using the following steps</p>
+						<ul>
+							<li>Install node and npm</li>
+							<li>Install gulp (globally) <strong>npm install -g gulp</strong></li>
+							<li>Install dependancies <strong>npm install</strong></li>
+							<li>Build file <strong>gulp build</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Start Grid Docs -->
+			<div id="grid-doc">
+
+				<div class="row">
+					<div class="col-8">
+						<h2>The Grid</h2>
+						<p>
+							The responsive grid can be set to any number of columns by specifying the <strong>$columns</strong><i>(default 8)</i> variable before building the sass file and has options for different column widths depending on screen size.
+						</p>
+						<p>
+							The grid will also allow us to push columns accross the row by adding the <strong>push-*</strong> to class, this will push the column along by the amount of columns specified.
+						</p>
+						<p><strong>Turning off responsiveness: </strong> If don't want to use the responsive elements of the grid this can be turned off by setting the SASS variable <strong>$isResponsive</strong> to false and creating a new build.</p>
+					</div>
+				</div>
+				
+				<!-- Large Grid -->
+				<div class="row">
+					<div class="col-8">
+						<h3>Large Grid</h3>
+						<p>
+							The default grid for larger resolutions, the grid will stack below the <strong>$large</strong> breakpoint.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5">
+						<div class="demo">
+							<div class="row">
+								<div class="col-4">4</div>
+								<div class="col-4">4</div>
+							</div>
+							<div class="row">
+								<div class="col-5">5</div>
+								<div class="col-3">3</div>
+							</div>
+							<div class="row">
+								<div class="col-6">6</div>
+								<div class="col-2">2</div>
+							</div>
+							<div class="row">
+								<div class="col-7">7</div>
+								<div class="col-1">1</div>
+							</div>
+							<div class="row">
+								<div class="col-8">8</div>
+							</div>
+							<div class="row">
+								<div class="col-4 push-2">4 col push 2</div>
+							</div>
+							<div class="row">
+								<div class="col-2">2 col push 0</div>
+								<div class="col-2 push-4">2 col push 4</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<pre>
+							<code class="language-markup code">
+<div class="row">
+	<div class="col-4">4</div>
+	<div class="col-4">4</div>
+</div>
+<div class="row">
+	<div class="col-5">5</div>
+	<div class="col-3">3</div>
+</div>
+<div class="row">
+	<div class="col-6">6</div>
+	<div class="col-2">2</div>
+</div>
+<div class="row">
+	<div class="col-7">7</div>
+	<div class="col-1">1</div>
+</div>
+<div class="row">
+	<div class="col-8">8</div>
+</div>
+<div class="row">
+	<div class="col-4 push-2">4 col push 2</div>
+</div>
+<div class="row">
+	<div class="col-2">2 col push 0</div>
+	<div class="col-2 push-4">2 col push 4</div>
+</div>
+							</code>
+						</pre>
+					</div>
+				</div>
+				<!-- End Large Grid -->
+
+				<!-- Medium Grid -->
+				<div class="row">
+					<div class="col-8">
+						<h3>Medium Grid</h3>
+						<p>
+							The default grid for medium, the grid will stack below the <strong>$small</strong> breakpoint.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5">
+						<div class="demo">
+							<div class="row">
+								<div class="col-4 col-4-med">4</div>
+								<div class="col-4 col-4-med">4</div>
+							</div>
+							<div class="row">
+								<div class="col-5 col-5-med">5</div>
+								<div class="col-3 col-3-med">3</div>
+							</div>
+							<div class="row">
+								<div class="col-6 col-6-med">6</div>
+								<div class="col-2 col-2-med">2</div>
+							</div>
+							<div class="row">
+								<div class="col-7 col-7-med">7</div>
+								<div class="col-1 col-1-med">1</div>
+							</div>
+							<div class="row">
+								<div class="col-8 col-8-med">8</div>
+							</div>
+							<div class="row">
+								<div class="col-4 col-4-med push-2 push-2-med">4 col push 2</div>
+							</div>
+							<div class="row">
+								<div class="col-2 col-2-med">2 col push 0</div>
+								<div class="col-2 col-2-med push-4 push-4-med">2 col push 4</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<pre>
+							<code class="language-markup code">
+<div class="row">
+	<div class="col-4 col-4-med">4</div>
+	<div class="col-4 col-4-med">4</div>
+</div>
+<div class="row">
+	<div class="col-5 col-5-med">5</div>
+	<div class="col-3 col-3-med">3</div>
+</div>
+<div class="row">
+	<div class="col-6 col-6-med">6</div>
+	<div class="col-2 col-2-med">2</div>
+</div>
+<div class="row">
+	<div class="col-7 col-7-med">7</div>
+	<div class="col-1 col-1-med">1</div>
+</div>
+<div class="row">
+	<div class="col-8 col-8-med">8</div>
+</div>
+<div class="row">
+	<div class="col-4 col-4-med push-2 push-2-med">4 col push 2</div>
+</div>
+<div class="row">
+	<div class="col-2 col-2-med">2 col push 0</div>
+	<div class="col-2 col-2-med push-4 push-4-med">2 col push 4</div>
+</div>
+							</code>
+						</pre>
+					</div>
+				</div>
+				<!-- End Medium Grid -->
+
+				<!-- Small Grid -->
+				<div class="row">
+					<div class="col-8">
+						<h3>Small Grid</h3>
+						<p>
+							The default grid for smaller resolutions.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5">
+						<div class="demo">
+							<div class="row">
+								<div class="col-4 col-4-med col-4-small">4</div>
+								<div class="col-4 col-4-med col-4-small">4</div>
+							</div>
+							<div class="row">
+								<div class="col-5 col-5-med col-5-small">5</div>
+								<div class="col-3 col-3-med col-3-small">3</div>
+							</div>
+							<div class="row">
+								<div class="col-6 col-6-med col-6-small">6</div>
+								<div class="col-2 col-2-med col-2-small">2</div>
+							</div>
+							<div class="row">
+								<div class="col-7 col-7-med col-7-small">7</div>
+								<div class="col-1 col-1-med col-1-small">1</div>
+							</div>
+							<div class="row">
+								<div class="col-8 col-8-med col-8-small">8</div>
+							</div>
+							<div class="row">
+								<div class="col-4 col-4-med col-4-small push-2 push-2-med push-2-small">4 col push 2</div>
+							</div>
+							<div class="row">
+								<div class="col-2 col-2-med col-2-small">2 col push 0</div>
+								<div class="col-2 col-2-med col-2-small push-4 push-4-med push-4-small">2 col push 4</div>
+							</div>
+						</div>
+					</div>
+<div class="col-3">
+						<pre>
+							<code class="language-markup code">
+<div class="row">
+	<div class="col-4 col-4-med col-4-small">4</div>
+	<div class="col-4 col-4-med col-4-small">4</div>
+</div>
+<div class="row">
+	<div class="col-5 col-5-med col-5-small">5</div>
+	<div class="col-3 col-3-med col-3-small">3</div>
+</div>
+<div class="row">
+	<div class="col-6 col-6-med col-6-small">6</div>
+	<div class="col-2 col-2-med col-2-small">2</div>
+</div>
+<div class="row">
+	<div class="col-7 col-7-med col-7-small">7</div>
+	<div class="col-1 col-1-med col-1-small">1</div>
+</div>
+<div class="row">
+	<div class="col-8 col-8-med col-8-small">8</div>
+</div>
+<div class="row">
+	<div class="col-4 col-4-med col-4-small push-2 push-2-med push-2-small">4 col push 2</div>
+</div>
+<div class="row">
+	<div class="col-2 col-2-med col-2-small">2 col push 0</div>
+	<div class="col-2 col-2-med col-2-small push-4 push-4-med push-4-small">2 col push 4</div>
+</div>
+							</code>
+						</pre>
+					</div>
+				</div>
+				<!-- End Small Grid -->
+			</div>
+			<!-- End Grid Docs -->
+
+			<div id="visibility-doc">
+				<!-- Visibilty -->
+				<div class="row">
+					<div class="col-8">
+						<h2>Visiblility classes</h2>
+						<p>
+							Hide and show elemented based on screen resolution.
+						</p>
+					</div>
+					<div class="col-4">
+						<p><strong>hide-for-*</strong></p>
+						<p class="hide-for-small">Hidden for small screens.</p>
+						<p class="hide-for-medium">Hidden for medium screens.</p>
+						<p class="hide-for-medium-down">Hidden for small and medium screens.</p>
+						<p class="hide-for-medium-up">Hidden for medium and up screens.</p>
+						<p class="hide-for-large">Hidden for large screens.</p>
+						<p><strong>show-for-*</strong></p>
+						<p class="show-for-small">Visible on small screens.</p>
+						<p class="show-for-medium">Visible on medium screens.</p>
+						<p class="show-for-medium-down">Visible on small and medium screens.</p>
+						<p class="show-for-medium-up">Visibile on medium and up screens.</p>
+						<p class="show-for-large">Visibile on large screens.</p>
+					</div>
+					<div class="col-4">
+						<pre>
+							<code class="language-markup code">
+<p class="hide-for-small">Hidden for small screens.</p>
+<p class="hide-for-medium">Hidden for medium screens.</p>
+<p class="hide-for-medium-down">Hidden for small and medium screens.</p>
+<p class="hide-for-medium-up">Hidden for medium and up screens.</p>
+<p class="hide-for-large">Hidden for large screens.</p>
+<p class="show-for-small">Visible on small screens.</p>
+<p class="show-for-medium">Visible on medium screens.</p>
+<p class="show-for-medium-down">Visible on small and medium screens.</p>
+<p class="show-for-medium-up">Visibile on medium and up screens.</p>
+<p class="show-for-large">Visibile on large screens.</p>
+							</code>
+						</pre>
+					</div>
+				</div>
+				<!-- End visibility  -->
+			</div>
+
+			<div id="form-doc">
+				<!-- Form -->
+				<div class="row">
+					<div class="col-8">
+						<h2>Forms</h2>
+					</div>
+					<div class="col-4">
+						<form>
+							<div class="col-8 col-8-med">
+								<label>Text Label</label>
+								<input type="text" placeholder="Placeholder">
+							</div>
+							<div class="col-4 col-4-med">
+								<label>Text Label</label>
+								<input type="text" placeholder="Placeholder">
+							</div>
+							<div class="col-4 col-4-med">
+								<label>Text Label</label>
+								<input type="text" placeholder="Placeholder">
+							</div>
+							<div class="col-8 col-8-med">
+								<label>Textarea Label</label>
+								<textarea></textarea>
+							</div>
+							<div class="col-8 col-8-med">
+								<button class="right">Submit</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-4">
+						<pre>
+							<code class="language-markup code">
+<div class="col-4">
+	<form>
+		<div class="col-8 col-8-med">
+			<label>Text Label</label>
+			<input type="text" placeholder="Placeholder">
+		</div>
+		<div class="col-4 col-4-med">
+			<label>Text Label</label>
+			<input type="text" placeholder="Placeholder">
+		</div>
+		<div class="col-4 col-4-med">
+			<label>Text Label</label>
+			<input type="text" placeholder="Placeholder">
+		</div>
+		<div class="col-8 col-8-med">
+			<label>Textarea Label</label>
+			<textarea></textarea>
+		</div>
+		<div class="col-8 col-8-med">
+			<button class="right">Submit</button>
+		</div>
+	</form>
+</div>
+							</code>
+						</pre>
+					</div>
+
+				</div>
+				<!-- End Form -->
+			</div>
+
+			<div id="button-doc">
+				<div class="row">
+					<div class="col-8">
+						<h2>
+							Buttons
+						</h2>
+						<p>Buttons come with four different styles, there is a default style and other styles can be applied via classes. You can also apply the button style to other elements using the <strong>button</strong> class.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1">
+						<button>Default</button>
+						<button class="bland">Bland</button>
+						<button class="success">Success</button>
+						<button class="warn">Warn</button>
+						<a href="#" class="button">Default</a>
+					</div>
+					<div class="col-4 push-3">
+						<pre>
+							<code class="language-markup code">
+<button>Default</button>
+<button class="bland">Bland</button>
+<button class="success">Success</button>
+<button class="warn">Warn</button>
+<a href="#" class="button">Default</a>
+							</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+
+			<div id="panel-doc">
+				<div class="row">
+					<div class="col-8">
+						<h2>Panels</h2>
+						<p>
+							Panels are used to draw the users attention, they can be in situations such as warning messages or highlighting specific information.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4 col-4-med push-2-med">
+						<div class="panel">
+							<p>This is the default style panel</p>
+							<p>It's designed to draw a users attention</p>
+						</div>
+						<div class="panel bland">
+							<p>This is the bland style panel</p>
+						</div>
+						<div class="panel success">
+							<p>This is the success style panel</p>
+						</div>
+						<div class="panel warn">
+							<p>This is the warn style panel</p>
+						</div>
+					</div>
+					<div class="col-4">
+						<pre>
+							<code class="language-markup code">
+<div class="panel">
+	<p>This is the default style panel</p>
+	<p>It's designed to draw a users attention</p>
+</div>
+<div class="panel bland">
+	<p>This is the bland style panel</p>
+</div>
+<div class="panel success">
+	<p>This is the success style panel</p>
+</div>
+<div class="panel warn">
+	<p>This is the warn style panel</p>
+</div>
+							</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-8">
+					<h2>Navigation</h2>
+					<p>Basic navigation components are provided in the form of a top bar nav and a side nav, the top nav can become a fix navigation by adding the class <strong>fixed</strong>.</p>
+				</div>
+				<div class="col-4">
+					<nav class="top-nav padded">
+						<h3 class="brand">Top Nav</h3>
+						<ul class="right">
+							<li><a href="#">Link One</a></li>
+							<li><a href="#">Link Two</a></li>
+							<li><a href="#">Link Three</a></li>
+						</ul>
+					</nav>
+					<nav class="side-nav">
+						<ul>
+							<li>
+								<a href="#">Link One</a>
+							</li>
+							<li>
+								<a href="#">Link Two</a>
+							</li>
+							<li>
+								<a href="#">Link Three</a>
+							</li>
+							<li>
+								<a href="#">Link Four</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-4">
+<pre>
+	<code class="language-markup code">
+<!-- top nav -->
+<div class="col-8">
+	<nav class="top-nav padded">
+		<h3 class="brand">Top Nav</h3>
+		<ul class="right">
+			<li><a href="#">Link One</a></li>
+			<li><a href="#">Link Two</a></li>
+			<li><a href="#">Link Three</a></li>
+		</ul>
+	</nav>
+</div>
+
+<!-- side nav -->
+<nav class="side-nav">
+	<ul>
+		<li>
+			<a href="#">Link One</a>
+		</li>
+		<li>
+			<a href="#">Link Two</a>
+		</li>
+		<li>
+			<a href="#">Link Three</a>
+		</li>
+		<li>
+			<a href="#">Link Four</a>
+		</li>
+	</ul>
+</nav>
+							</code>
+						</pre>
+				</div>
+			</div>
+
+<footer class="row">
+	<div class="col-8">
+		By <a href="http://www.jackpopp.com">Jack Hannigan Popp</a>
+	</div>
+</footer>
+
+
+		<script>
+			// stop code samples from rendering as html
+			codes = document.querySelectorAll('.code')
+			for (var i = codes.length - 1; i >= 0; i--) {
+				codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;')
+			};
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-52648404-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>
