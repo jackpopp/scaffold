@@ -30,15 +30,53 @@
 // add pull columns
 
 @mixin createColumns
-	@for $i from 1 through $columns
-		@each $name, $breakpoint in $breakpoints 
-			.col-#{$i}-#{$name}
-				@media only screen and (min-width: $breakpoint)
+	
+	@for $b from 1 through length($breakpoints)
+
+		@for $i from 1 through $columns
+
+			$current: nth($breakpoints, $b)
+			$currentName: nth($current, 1)
+			$currentWidth: nth($current, 2)
+
+			@if length($breakpoints) >= $b+1
+				$next: nth($breakpoints, $b+1)
+				$nextName: nth($next, 1)
+				$nextWidth: nth($next, 2)
+
+				.col-#{$i}-#{$currentName}
+					@media only screen and (min-width: $currentWidth) and (max-width: $nextWidth - 1)
+						width: 100%/ ($columns / $i)
+					@extend .column
+				.push-#{$i}-#{$currentName}
+					@media only screen and (min-width: $currentWidth) and (max-width: $nextWidth - 1)
+						margin-left: 100%/ ($columns / $i)
+
+			@else
+				.col-#{$i}-#{$currentName}
+					@media only screen and (min-width: $currentWidth)
+						width: 100%/ ($columns / $i)
+					@extend .column
+				.push-#{$i}-#{$currentName}
+					@media only screen and (min-width: $currentWidth)
+						margin-left: 100%/ ($columns / $i)
+
+			// curent break point and up
+			.col-#{$i}-#{$currentName}-up
+				@media only screen and (min-width: $currentWidth)
 					width: 100%/ ($columns / $i)
 				@extend .column
-			.push-#{$i}-#{$name}
-				@media only screen and (min-width: $breakpoint)
+			.push-#{$i}-#{$currentName}-up
+				@media only screen and (min-width: $currentWidth)
 					margin-left: 100%/ ($columns / $i)
-			
+					
+	// all breakpoints
+	@for $i from 1 through $columns
+		.col-#{$i}
+			width: 100%/ ($columns / $i)
+			@extend .column
+		.push-#{$i}
+			margin-left: 100%/ ($columns / $i)
+		
 
 @include createColumns
