@@ -6,22 +6,23 @@ button, .button
 	background-color: $mainColor
 	color: $buttonCopy
 	font-size: 13px
-	font-weight: 400
 	text-align: center
 	display: inline-block
 	border-radius: 3px
+	cursor: pointer
+	transition: background 0.3s
 	&:hover
 		background-color: darken($mainColor, 10%)
 		color: $altBodyColor
-	&.warn
+	&.button-warn
 		background-color: $warnColor
 		&:hover
 			background-color: darken($warnColor, 10%)
-	&.success
+	&.button-success
 		background-color: $successColor
 		&:hover
 			background-color: darken($successColor, 10%)
-	&.bland
+	&.button-bland
 		background-color: $blandColor
 		color: $bodyColor
 		&:hover
