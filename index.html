@@ -5,7 +5,7 @@
 		<link href="dist/scaffold.css" rel="stylesheet" type="text/css">
 		<link href="docs/css/docs.css" rel="stylesheet" type="text/css">
 		<link href="docs/css/prism.css" rel="stylesheet" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 		<title>Scaffold - Sass based CSS Grid System.</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,21 +16,32 @@
 	</head>
 	<body>
 		<nav class="top-nav">
-			<div class="row">
-				<div class="col-8-large">
-					<h1>Scaffold</h1>
+			<div class="top-nav-container">
+				<div class="row">
+					<div class="col-8-large">
+						<h1>Scaffold</h1>
+					</div>
 				</div>
 			</div>
 		</nav>
 
-			<div class="row">
+			<div class="row hero">
+				<div class="col-8-large">
+					<h2>	
+						Scaffold is a ultra flexible and leightweight sass based grid system.
+					</h2>
+					<h3>
+						It's designed to give you flexible foundations to build what ever you want easily.
+					</h3>
+				</div>
 				<div class="col-8-large">
 					<p>
-						Quickly cook up a new website with Scaffold, a small responsive css framework. Scaffold is lightweight standing at around 11kb including <a href="">normalize.css.</a>
+						<a class="button button-success" href="https://github.com/jackpopp/griddle"><strong>Check out the repository on github.</strong></a>
 					</p>
-					<p>
-						<a href="https://github.com/jackpopp/griddle">Check out the repository on github.</a>
-					</p>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-8-large">
 					<h2>Browser Support</h2>
 					<p>Current list of tested and supported browsers</p>
 					<ul>
@@ -41,7 +52,7 @@
 						<li>IE 9+</li>
 					</ul>
 				</div>
-			</div>
+			</div>				
 			<div class="row">
 				<div class="col-8-large">
 					<h2>Installation</h2>
@@ -243,7 +254,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-3-large">
 						<pre>
 							<code class="language-markup code">
 <div class="row">
@@ -342,7 +353,7 @@
 							</div>
 						</div>
 					</div>
-<div class="col-3">
+<div class="col-3-large">
 						<pre>
 							<code class="language-markup code">
 <div class="row">
@@ -391,29 +402,29 @@
 					<div class="col-4-large">
 						<p><strong>hide-for-*</strong></p>
 						<p class="hide-for-small">Hidden for small screens.</p>
-						<p class="hide-for-mediumium">Hidden for medium screens.</p>
-						<p class="hide-for-mediumium-down">Hidden for small and medium screens.</p>
-						<p class="hide-for-mediumium-up">Hidden for medium and up screens.</p>
+						<p class="hide-for-medium">Hidden for medium screens.</p>
+						<p class="hide-for-medium-down">Hidden for small and medium screens.</p>
+						<p class="hide-for-medium-up">Hidden for medium and up screens.</p>
 						<p class="hide-for-large">Hidden for large screens.</p>
 						<p><strong>show-for-*</strong></p>
 						<p class="show-for-small">Visible on small screens.</p>
-						<p class="show-for-mediumium">Visible on medium screens.</p>
-						<p class="show-for-mediumium-down">Visible on small and medium screens.</p>
-						<p class="show-for-mediumium-up">Visibile on medium and up screens.</p>
+						<p class="show-for-medium">Visible on medium screens.</p>
+						<p class="show-for-medium-down">Visible on small and medium screens.</p>
+						<p class="show-for-medium-up">Visibile on medium and up screens.</p>
 						<p class="show-for-large">Visibile on large screens.</p>
 					</div>
 					<div class="col-4-large">
 						<pre>
 							<code class="language-markup code">
 <p class="hide-for-small">Hidden for small screens.</p>
-<p class="hide-for-mediumium">Hidden for medium screens.</p>
-<p class="hide-for-mediumium-down">Hidden for small and medium screens.</p>
-<p class="hide-for-mediumium-up">Hidden for medium and up screens.</p>
+<p class="hide-for-medium">Hidden for medium screens.</p>
+<p class="hide-for-medium-down">Hidden for small and medium screens.</p>
+<p class="hide-for-medium-up">Hidden for medium and up screens.</p>
 <p class="hide-for-large">Hidden for large screens.</p>
 <p class="show-for-small">Visible on small screens.</p>
-<p class="show-for-mediumium">Visible on medium screens.</p>
-<p class="show-for-mediumium-down">Visible on small and medium screens.</p>
-<p class="show-for-mediumium-up">Visibile on medium and up screens.</p>
+<p class="show-for-medium">Visible on medium screens.</p>
+<p class="show-for-medium-down">Visible on small and medium screens.</p>
+<p class="show-for-medium-up">Visibile on medium and up screens.</p>
 <p class="show-for-large">Visibile on large screens.</p>
 							</code>
 						</pre>
@@ -497,18 +508,18 @@
 				<div class="row">
 					<div class="col-1-large">
 						<button>Default</button>
-						<button class="bland">Bland</button>
-						<button class="success">Success</button>
-						<button class="warn">Warn</button>
+						<button class="button-bland">Bland</button>
+						<button class="button-success">Success</button>
+						<button class="button-warn">Warn</button>
 						<a href="#" class="button">Default</a>
 					</div>
 					<div class="col-4-large push-3-large">
 						<pre>
 							<code class="language-markup code">
 <button>Default</button>
-<button class="bland">Bland</button>
-<button class="success">Success</button>
-<button class="warn">Warn</button>
+<button class="button-bland">Bland</button>
+<button class="button-success">Success</button>
+<button class="button-warn">Warn</button>
 <a href="#" class="button">Default</a>
 							</code>
 						</pre>

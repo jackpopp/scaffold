@@ -2,24 +2,40 @@ $gridBackground: rgb(234, 234, 234)
 
 body
 	font-family: 'Lato', sans-serif
+	h1,h2,h3,h4,h5,h6,a
+		font-weight: 700
+
+strong
+	font-weight: 800
+
+.top-nav
+	width: 100%
+	min-height: 120px
+	.top-nav-container
+		position: absolute
+		width: inherit
+		position: fixed
+		background: #1B1B1B
+	h1
+		color: white
+		margin-top: 15px
+
+.hero
+	margin-bottom: 40px
+	text-align: center
 
 .demo
 	div[class^='col-'],div[class*='col-']
-		padding-bottom: 15px
-		line-height: 1.6
-
-	.row
 		margin-bottom: 10px
-		margin-left: -20px
-		magin-right: -20px
+		line-height: 1
+		font-weight: 700
 
 	.col-content
-		height: 45px
 		background: $gridBackground	
-		//border: 1px solid darken($gridBackground, 10%)
 		border-radius: 3px
-		padding-top: 8px
+		padding: 15px
 		text-align: center
+		transition: background 0.3s
 		&:hover
 			background: darken($gridBackground, 10%)
 
@@ -28,10 +44,6 @@ body
 
 pre[class*="language-"]
 	margin-top: 0!important
-	font-family: 'Lato', sans-serif!important
-
-//code[class*="language-"], pre[class*="language-"]
-	//font-family: 'Lato', sans-serif!important
 
 footer
 	padding-top: 20px
