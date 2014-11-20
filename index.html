@@ -18,7 +18,7 @@
 		<nav class="top-nav">
 			<div class="top-nav-container">
 				<div class="row">
-					<div class="col-8-large">
+					<div class="col-8">
 						<h1>Scaffold</h1>
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 		</nav>
 
 			<div class="row hero">
-				<div class="col-8-large">
+				<div class="col-8">
 					<h2>	
 						Scaffold is a ultra flexible and leightweight sass based grid system.
 					</h2>
@@ -34,14 +34,15 @@
 						It's designed to give you flexible foundations to build what ever you want easily.
 					</h3>
 				</div>
-				<div class="col-8-large">
+				<div class="col-8">
 					<p>
 						<a class="button button-success" href="https://github.com/jackpopp/griddle"><strong>Check out the repository on github.</strong></a>
 					</p>
 				</div>	
 			</div>
+			<!--
 			<div class="row">
-				<div class="col-8-large">
+				<div class="col-8">
 					<h2>Browser Support</h2>
 					<p>Current list of tested and supported browsers</p>
 					<ul>
@@ -52,16 +53,18 @@
 						<li>IE 9+</li>
 					</ul>
 				</div>
-			</div>				
+			</div>	
+			-->			
 			<div class="row">
-				<div class="col-8-large">
-					<h2>Installation</h2>
+				<div class="col-8">
+					<h2>Install and Build</h2>
 				</div>
-				<div class="col-4-large col-4-medium">
+				<div class="col-4-medium-up">
 					<p>A prebuilt version of Scaffold with default settings can be found in the <strong>build</strong> folder, you can create a custom build from the supplied SASS file.</p>
+					<p>Each featured is seperated into its own file and can be added/removed from the main <strong>scaffold.sass</strong>. Variables can be adjusted from the <strong>vars.sass</strong> file.</p>
 					<p>To build a custom version of Scaffold you can use the original SASS file along with the provided gulpfile to build the css file. You can adjust the amount of columns, breakpoints, gutters and more.</p>
 				</div>
-				<div class="col-4-large col-4-medium">
+				<div class="col-3-medium-up push-1-medium-up">
 					<div class="panel">
 						<h4>Custom Build</h4>
 						<p>You can create a custom build using the following steps</p>
@@ -73,139 +76,89 @@
 						</ul>
 					</div>
 				</div>
+
+				<hr class="col-8">
 			</div>
 			<!-- Start Grid Docs -->
 			<div id="grid-doc">
 
 				<div class="row">
-					<div class="col-8-large">
+					<div class="col-6-large">
 						<h2>The Grid</h2>
 						<p>
-							The responsive grid can be set to any number of columns by specifying the <strong>$columns</strong><i>(default 8)</i> variable before building the sass file and has options for different column widths depending on screen size.
+							Scaffold is all about the grid, the sass file can genreate any amount of grids with varying breakpoints and columns with adjustable gutters.
 						</p>
 						<p>
-							The grid will also allow us to push columns accross the row by adding the <strong>push-*</strong> to class, this will push the column along by the amount of columns specified.
+							Each breakpoint added will create a new named grid set that will respond to width between its width and the next width up.
 						</p>
-						<p><strong>Turning off responsiveness: </strong> If don't want to use the responsive elements of the grid this can be turned off by setting the SASS variable <strong>$isResponsive</strong> to false and creating a new build.</p>
+						<!--<p>
+							The grid will also allow us to push columns accross the row by adding the <strong>push-*</strong> to class, this will push the column along by the amount of columns specified.
+						</p>-->
 					</div>
 				</div>
-				
-				<!-- Large Grid -->
+
+				<!-- Grid sizes and ranges -->
 				<div class="row">
 					<div class="col-8-large">
-						<h3>Large Grid</h3>
-						<p>
-							The default grid for larger resolutions, the grid will stack below the <strong>$large</strong> breakpoint.
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-5-large">
-						<div class="demo">
-							<div class="row">
-								<div class="col-4-large">
-									<div class="col-content">4</div>
-								</div>
-								<div class="col-4-large">
-									<div class="col-content">4</div>
-								</div>
+						
+						<div class="row">
+							<div class="col-5-medium-up collapse">
+
+								<h3>Grid Sizes</h3>
+
+								<p>
+									The Grid is built from the <strong>$breakpoints</strong> variable that have been set up in the <strong>vars.sass</strong> folder.
+								</p>
+								<p>
+									Adding a new breakpoint and grid is as easy as adding a new key name and matching pixel value as follows:
+								</p>
+								<p>
+									<strong>$breakpoints: (small: 320px, medium: 768px, large: 1024px, extra-large: 1280px)</strong>
+								</p>
+								<p>
+									We can then define columns per breakpoint as follows:
+								</p>
+								 <ul>
+								 	<li><strong>.col-8-large</strong></li>
+								 	<li><strong>.col-8-medium</strong></li>
+								 	<li><strong>.col-8-small</strong></li>
+								 </ul>
+								<p>
+									If the screensize drops below our specified breakpoint and there are no classes added to support the next breakpoint the column will default to fullwidth.
+								</p>
+
+								<h3>Grid Ranges</h3>
+
+								<p>
+									Each grid size only is only applicable within its breakpoint, if we want to keep the same column size over a range of sizes we can append <strong>-up</strong> to a class.
+								</p>
+
+								<p>To create a 4 column div for medium and large screens we add the class <strong>.col-4-medium-up</strong>.</p>
+
 							</div>
-							<div class="row">
-								<div class="col-5-large">
-									<div class="col-content">5</div>
-								</div>
-								<div class="col-3-large">
-									<div class="col-content">3</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-6-large">
-									<div class="col-content">6</div>
-								</div>
-								<div class="col-2-large">
-									<div class="col-content">2</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-7-large">
-									<div class="col-content">7</div>
-								</div>
-								<div class="col-1-large">
-									<div class="col-content">1</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-8-large">
-									<div class="col-content">8</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-4-large push-2-large">
-									<div class="col-content">4 col push 2</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-2-large">
-									<div class="col-content">2 col push 0</div>
-								</div>
-								<div class="col-2-large push-4-large">
-									<div class="col-content">2 col push 4</div>
+
+
+							<div class="col-3-medium-up collapse">
+								<div class="panel">
+									<ul>
+										<li><strong>Default breakpoints:</strong></li>
+									 	<li><strong>small - 320px</strong></li>
+									 	<li><strong>medium - 767px</strong></li>
+									 	<li><strong>large - 1024px</strong></li>
+									 </ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-3-large">
-						<pre>
-							<code class="language-markup code">
-<div class="row">
-	<div class="col-4-large">4</div>
-	<div class="col-4">4</div>
-</div>
-<div class="row">
-	<div class="col-5-large">5</div>
-	<div class="col-3-large">3</div>
-</div>
-<div class="row">
-	<div class="col-6-large">6</div>
-	<div class="col-2-large">2</div>
-</div>
-<div class="row">
-	<div class="col-7-large">7</div>
-	<div class="col-1-large">1</div>
-</div>
-<div class="row">
-	<div class="col-8-large">8</div>
-</div>
-<div class="row">
-	<div class="col-4-large push-2-large">4 col push 2</div>
-</div>
-<div class="row">
-	<div class="col-2-large">2 col push 0</div>
-	<div class="col-2-large push-4-large">2 col push 4</div>
-</div>
-							</code>
-						</pre>
-					</div>
-				</div>
-				<!-- End Large Grid -->
-
-				<!-- Medium Grid -->
-				<div class="row">
-					<div class="col-8-large">
-						<h3>Medium Grid</h3>
-						<p>
-							The default grid for medium, the grid will stack below the <strong>$small</strong> breakpoint.
-						</p>
-					</div>
 				</div>
 				<div class="row">
 					<div class="col-5-large">
 						<div class="demo">
 							<div class="row">
-								<div class="col-4-large col-4-medium">
+								<div class="col-4-medium-up">
 									<div class="col-content">4</div>
 							</div>
-								<div class="col-4-large col-4-medium">
+								<div class="col-4-medium-up">
 									<div class="col-content">4</div>
 								</div>
 							</div>
@@ -287,9 +240,108 @@
 						</pre>
 					</div>
 				</div>
-				<!-- End Medium Grid -->
+				<!-- End Grid Sizes and Ranges -->
+				
+				<!-- Static Grid 
+				<div class="row">
+					<div class="col-8-large">
+						<h3>Staitc Grid</h3>
+						<p>
+							This is a static grid that will stay the same at all screen sizes, it will no stack at any screensize
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5-large">
+						<div class="demo">
+							<div class="row">
+								<div class="col-4">
+									<div class="col-content">4</div>
+								</div>
+								<div class="col-4">
+									<div class="col-content">4</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-5">
+									<div class="col-content">5</div>
+								</div>
+								<div class="col-3">
+									<div class="col-content">3</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<div class="col-content">6</div>
+								</div>
+								<div class="col-2">
+									<div class="col-content">2</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7">
+									<div class="col-content">7</div>
+								</div>
+								<div class="col-1">
+									<div class="col-content">1</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-8">
+									<div class="col-content">8</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4 push-2">
+									<div class="col-content">4 col push 2</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<div class="col-content">2 col push 0</div>
+								</div>
+								<div class="col-2 push-4">
+									<div class="col-content">2 col push 4</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-3-large">
+						<pre>
+							<code class="language-markup code">
+<div class="row">
+	<div class="col-4">4</div>
+	<div class="col-4">4</div>
+</div>
+<div class="row">
+	<div class="col-5">5</div>
+	<div class="col-3">3</div>
+</div>
+<div class="row">
+	<div class="col-6">6</div>
+	<div class="col-2">2</div>
+</div>
+<div class="row">
+	<div class="col-7">7</div>
+	<div class="col-1">1</div>
+</div>
+<div class="row">
+	<div class="col-8">8</div>
+</div>
+<div class="row">
+	<div class="col-4 push-2">4 col push 2</div>
+</div>
+<div class="row">
+	<div class="col-2">2 col push 0</div>
+	<div class="col-2 push-4">2 col push 4</div>
+</div>
+							</code>
+						</pre>
+					</div>
+				</div>
+				 End Static Grid -->
 
-				<!-- Small Grid -->
+				<!-- Small Grid 
 				<div class="row">
 					<div class="col-8-large">
 						<h3>Small Grid</h3>
@@ -386,7 +438,7 @@
 						</pre>
 					</div>
 				</div>
-				<!-- End Small Grid -->
+				End Small Grid -->
 			</div>
 			<!-- End Grid Docs -->
 
@@ -537,7 +589,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4-large col-4-medium push-2-medium">
+					<div class="col-3-large col-4-medium push-2-medium">
 						<div class="panel">
 							<p>This is the default style panel</p>
 							<p>It's designed to draw a users attention</p>
@@ -552,7 +604,7 @@
 							<p>This is the warn style panel</p>
 						</div>
 					</div>
-					<div class="col-4-large">
+					<div class="col-4-large push-1-large">
 						<pre>
 							<code class="language-markup code">
 <div class="panel">
