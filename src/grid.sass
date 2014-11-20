@@ -51,6 +51,10 @@
 				.push-#{$i}-#{$currentName}
 					@media only screen and (min-width: $currentWidth) and (max-width: $nextWidth - 1)
 						margin-left: 100%/ ($columns / $i)
+				.pull-#{$i}-#{currentName}
+					@media only screen and (min-width: $currentWidth) and (max-width: $nextWidth - 1)
+						left: 100%/ ($columns / $i)
+						right: auto
 
 			@else
 				.col-#{$i}-#{$currentName}
@@ -60,6 +64,10 @@
 				.push-#{$i}-#{$currentName}
 					@media only screen and (min-width: $currentWidth)
 						margin-left: 100%/ ($columns / $i)
+				.pull-#{$i}-#{currentName}
+					@media only screen and (min-width: $currentWidth)
+						left: 100%/ ($columns / $i)
+						right: auto
 
 			// curent break point and up
 			.col-#{$i}-#{$currentName}-up
@@ -69,8 +77,12 @@
 			.push-#{$i}-#{$currentName}-up
 				@media only screen and (min-width: $currentWidth)
 					margin-left: 100%/ ($columns / $i)
+			.pull-#{$i}-#{currentName}
+				@media only screen and (min-width: $currentWidth)
+					left: 100%/ ($columns / $i)
+					right: auto
 					
-	// all breakpoints
+	// afftects all breakpoints
 	@for $i from 1 through $columns
 		.col-#{$i}
 			width: 100%/ ($columns / $i)
